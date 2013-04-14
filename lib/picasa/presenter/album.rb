@@ -55,6 +55,11 @@ module Picasa
       end
 
       # @return [String]
+      def keywords
+        @keywords ||= safe_retrieve(parsed_body, "media$keywords")
+      end
+
+      # @return [String]
       def id
         @id ||= safe_retrieve(parsed_body, "gphoto$id")
       end

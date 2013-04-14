@@ -131,6 +131,10 @@ describe Picasa::API::Album do
       assert_equal "public", @album.access
     end
 
+    it "has keywords" do
+      assert_equal "keywords", @album.keywords
+    end
+
     it "has timestamp" do
       assert_equal "1219906800000", @album.timestamp
     end
