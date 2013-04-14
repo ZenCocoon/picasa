@@ -244,6 +244,16 @@ describe Picasa::API::Album do
         assert_equal "All Rights Reserved", @photo.license
       end
     end
+
+    describe "media" do
+      before do
+        @media = @album.media
+      end
+
+      it "has keywords" do
+        assert_equal "KEYWORDS", @media.keywords
+      end
+    end
   end
 
   describe "exceptions" do
@@ -267,6 +277,7 @@ describe Picasa::API::Album do
         assert_equal "created from test suite", album.summary
         assert_equal "protected", album.access
         assert_equal "Gilowice", album.location
+        assert_equal "test", album.media.keywords
         assert_equal 10, album.timestamp.length
       end
     end
